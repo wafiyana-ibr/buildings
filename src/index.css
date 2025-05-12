@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: Inter, sans-serif;
+}
+
+@font-face {
+  font-family: Clash-Bold;
+  src: url("./assets/fonts/Clash_Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Clash-Regular;
+  src: url("./assets/fonts/Clash_Regular.otf") format("opentype");
+}
+
+@theme {
+  --color-base-content: #ffffff;
+  --color-blue-400: #60a5fa;
+  --color-blue-600: #2563eb;
+  --color-yellow-400: #fbbf24;
+  --color-yellow-500: #f59e0b;
+  --font-clash-bold: Clash-Bold, sans-serif;
+  --font-clash-regular: Clash-Regular, sans-serif;
+}
+
+@layer components {
+  .feature {
+    @apply bg-white/10 backdrop-blur-md rounded-xl p-6 border-2 border-white/20 hover:transform hover:scale-105 transition-transform;
+  }
+
+  .btn {
+    @apply bg-yellow-400 rounded-md p-2 border-2 border-yellow-400 text-black text-sm font-semibold transition-all focus:outline-none hover:bg-yellow-400;
+  }
+}
